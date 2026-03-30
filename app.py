@@ -3,11 +3,14 @@ import cv2
 import requests
 import os
 import time
+from dotenv import load_dotenv  
+
+load_dotenv()  
 
 app = Flask(__name__)
 
-# تأكد من وضع المفتاح الخاص بك هنا أو في متغيرات النظام
-API_KEY = "9ce6ab3512403f7b0094bbd47f4928b48c571d3a085ee4e9e301da586e4c5d2f"
+
+API_KEY = os.getenv("VT_API_KEY")
 
 def analyze_url(url):
     if url.lower().startswith("https"):
@@ -21,7 +24,7 @@ def scan_url(url):
 
     headers = {"x-apikey": API_KEY}
     
-    # 1. إرسال الرابط للفحص
+   
     response = requests.post(
         "https://www.virustotal.com/api/v3/urls",
         headers=headers,
@@ -33,8 +36,7 @@ def scan_url(url):
 
     analysis_id = response.json()["data"]["id"]
     
-    # 2. حلقة تكرار (Loop) تنتظر حتى تكتمل الحالة
-    for i in range(5): # سيحاول 5 مرات (بإجمالي 10 ثوانٍ كحد أقصى)
+    for i in range(10): 
         report = requests.get(
             f"https://www.virustotal.com/api/v3/analyses/{analysis_id}",
             headers=headers
@@ -54,7 +56,7 @@ def scan_url(url):
                 else:
                     return f"✅ Safe ({harmless} checks)"
             
-        time.sleep(2) # انتظر ثانيتين قبل المحاولة القادمة
+        time.sleep(2) 
     
     return "⏳ Analysis is still in progress... please try again."
 
