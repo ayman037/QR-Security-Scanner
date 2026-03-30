@@ -23,18 +23,38 @@ def scan_url(url):
         return "⚠️ API Key not set"
 
     headers = {"x-apikey": API_KEY}
-    
-   
-    response = requests.post(
-        "https://www.virustotal.com/api/v3/urls",
-        headers=headers,
-        data={"url": url}
-    )
+    response = requests.post("https://www.virustotal.com/api/v3/urls", headers=headers, data={"url": url})
 
     if response.status_code != 200:
         return "❌ Error submitting URL"
 
     analysis_id = response.json()["data"]["id"]
+    
+    for i in range(10): 
+        report = requests.get(f"https://www.virustotal.com/api/v3/analyses/{analysis_id}", headers=headers)
+        
+        if report.status_code == 200:
+            attributes = report.json()["data"]["attributes"]
+            if attributes["status"] == "completed":
+                results = attributes["results"]
+                detected_by = []
+                
+                # استخراج المحركات التي قالت أن الرابط خبيث
+                for engine, data in results.items():
+                    if data['category'] == 'malicious':
+                        detected_by.append(f"{engine} ({data['result']})")
+                
+                stats = attributes["stats"]
+                malicious = stats.get("malicious", 0)
+                
+                if malicious > 0:
+                    details = " | Detected by: " + ", ".join(detected_by[:3]) # سنعرض أول 3 محركات فقط للاختصار
+                    return f"🚨 Malicious ({malicious} detections){details}"
+                else:
+                    return f"✅ Safe ({stats.get('harmless', 0)} checks)"
+            
+        time.sleep(2)
+    return "⏳ Analysis is still in progress..."
     
     for i in range(10): 
         report = requests.get(
