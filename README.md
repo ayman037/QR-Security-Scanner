@@ -15,7 +15,7 @@ This is a full-stack cybersecurity tool that extracts URLs from QR codes and per
 * **🛡️ Threat Intelligence:** Get detailed reports from 70+ antivirus engines (Google, Kaspersky, Symantec, etc.).
 * **🎨 Modern Security Dashboard:** A professional dark-mode UI with real-time status badges.
 * **🔒 Safe Environment:** Fully secured using environment variables (`.env`).
-* **🚀 URL Unshortening:** (Coming Soon) Detecting the final destination of shortened links.
+* **🚀 URL Unshortening:** Detecting the final destination of shortened links.
 
 ---
 
@@ -28,14 +28,10 @@ This is a full-stack cybersecurity tool that extracts URLs from QR codes and per
 
 ---
 
-## 📸 Screenshots | صور من المشروع
-![Main Interface](https://via.placeholder.com/800x400?text=QR+Scanner+Dashboard+Preview)
-
----
-
 ## 🚀 Installation & Setup | التثبيت والتشغيل
 
 1. **Clone & Install:**
    ```bash
    git clone [https://github.com/ayman037/QR-Security-Scanner.git](https://github.com/ayman037/QR-Security-Scanner.git)
+   cd QR-Security-Scanner
    pip install -r requirements.txt
