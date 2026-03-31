@@ -35,3 +35,12 @@ This is a full-stack cybersecurity tool that extracts URLs from QR codes and per
    git clone [https://github.com/ayman037/QR-Security-Scanner.git](https://github.com/ayman037/QR-Security-Scanner.git)
    cd QR-Security-Scanner
    pip install -r requirements.txt
+
+## 👨‍💻 Developers | المطورون
+## This project was developed by | هذا المشروع تم تطويره من قبل:
+
+Ayman Abdulraziq: https://www.linkedin.com/in/ayman-abdulraziq/
+
+Faisal Aldosari: https://www.linkedin.com/in/faisal-aldosari-10a87a3ab/
+
+---
