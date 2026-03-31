@@ -1,30 +1,41 @@
-# QR Security Scanner | فاحص الروابط الآمن لرموز QR
-
-### [English Description]
-A web-based security tool built with **Python** and **Flask** that scans QR codes from images, extracts the embedded URLs, and analyzes them for potential security threats using the **VirusTotal API**. It features a modern, dark-themed UI and provides real-time analysis of link safety.
-
-**Key Features:**
-* **QR Decoding:** Uses OpenCV to accurately read QR codes.
-* **Security Analysis:** Integrates with VirusTotal v3 API to check URLs against 70+ antivirus engines.
-* **Modern UI:** Responsive dark-mode interface built with Bootstrap 5.
-* **Environment Safety:** Uses `.env` files to protect sensitive API keys.
+# 🛡️ QR Security Scanner & Threat Intelligence
+**أداة متقدمة لفحص رموز QR وتحليل التهديدات الأمنية**
 
 ---
 
-### [الوصف باللغة العربية]
-أداة أمنية مبنية باستخدام لغة **باثيون** وإطار عمل **Flask**، تقوم بفحص رموز الـ QR من الصور المستخرجة، وتحليل الروابط بداخلها للكشف عن التهديدات الأمنية باستخدام **واجهة برمجة تطبيقات VirusTotal**. يتميز المشروع بواجهة مستخدم عصرية ونظام فحص فوري لسلامة الروابط.
+## 🌍 Overview | نظرة عامة
+This is a full-stack cybersecurity tool that extracts URLs from QR codes and performs deep security analysis using **VirusTotal v3 API**. It's designed to protect users from phishing and malicious links.
 
-**المميزات الرئيسية:**
-* **فك رموز QR:** يستخدم مكتبة OpenCV لقراءة الأكواد بدقة.
-* **التحليل الأمني:** يتكامل مع VirusTotal لفحص الروابط عبر أكثر من 70 محرك فحص عالمي.
-* **واجهة احترافية:** واجهة مستخدم متجاوبة بنظام "الوضع الداكن" باستخدام Bootstrap 5.
-* **حماية البيانات:** يعتمد على ملفات `.env` لحماية مفاتيح الـ API الخاصة بالمستخدم.
+أداة أمنية متكاملة لاستخراج الروابط من رموز QR وإجراء تحليل أمني عميق لها. تهدف الأداة لحماية المستخدمين من الروابط الخبيثة وهجمات التصيد الاحتيالي.
 
 ---
 
-## How to Run | كيفية التشغيل
+## ✨ Key Features | المميزات الرئيسية
+* **🔍 Advanced QR Decoding:** Precise QR reading using OpenCV.
+* **🛡️ Threat Intelligence:** Get detailed reports from 70+ antivirus engines (Google, Kaspersky, Symantec, etc.).
+* **🎨 Modern Security Dashboard:** A professional dark-mode UI with real-time status badges.
+* **🔒 Safe Environment:** Fully secured using environment variables (`.env`).
+* **🚀 URL Unshortening:** (Coming Soon) Detecting the final destination of shortened links.
 
-1. **Clone the repository | تحميل المشروع:**
+---
+
+## 🛠️ Built With | التقنيات المستخدمة
+* **Python (Flask)** - Backend Logic
+* **OpenCV** - Image Processing
+* **VirusTotal API v3** - Threat Intelligence
+* **Bootstrap 5** - Responsive Frontend UI
+* **Python-Dotenv** - Security & Configuration
+
+---
+
+## 📸 Screenshots | صور من المشروع
+![Main Interface](https://via.placeholder.com/800x400?text=QR+Scanner+Dashboard+Preview)
+
+---
+
+## 🚀 Installation & Setup | التثبيت والتشغيل
+
+1. **Clone & Install:**
    ```bash
    git clone [https://github.com/ayman037/QR-Security-Scanner.git](https://github.com/ayman037/QR-Security-Scanner.git)
-   cd QR-Security-Scanner
+   pip install -r requirements.txt
